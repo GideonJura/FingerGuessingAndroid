@@ -2,10 +2,24 @@ package com.example.apple.helloworld;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.opencv.android.OpenCVLoader;
+
 public class MainActivity extends AppCompatActivity {
+
+    static{
+
+        if(!OpenCVLoader.initDebug()){
+            Log.i("opencv","opencv initialized failed");
+
+        }else{
+            Log.i("opencv","opencv initialized successfully!!");
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
