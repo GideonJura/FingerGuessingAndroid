@@ -2,13 +2,27 @@ package com.example.apple.loginui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 
+import org.opencv.android.OpenCVLoader;
+
 public class MainActivity extends AppCompatActivity {
+
+    static{
+        if(!OpenCVLoader.initDebug()){
+            Log.i("opencv", "opencv initialized failed");
+
+        }else{
+            Log.i("opencv","opencv initialized successfully!!");
+        }
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
